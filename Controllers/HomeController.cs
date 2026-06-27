@@ -12,6 +12,11 @@ namespace labtask.net.Controllers
         {
             _logger = logger;
         }
+        public IActionResult dashboard()
+        {
+            return View();
+        }
+        
 
         public IActionResult Index()
         {
