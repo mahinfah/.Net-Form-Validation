@@ -8,5 +8,7 @@ namespace labtask.net.Controllers
         {
             return View();
         }
+
+
     }
 }
