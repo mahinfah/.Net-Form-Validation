@@ -17,5 +17,9 @@ namespace labtask.net.Models
         [Required]
         public string email { get; set; }
 
+        [Required]
+        public string Profession { get; set; }
+
+
     }
 }

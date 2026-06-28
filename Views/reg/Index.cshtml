@@ -3,15 +3,44 @@
 *@
 @{
 }
-@Html.ValidationSummary()
-<h1>Form</h1>
+@Html.ValidationSummary(true)
+ 
+
+@{ bool CheckProfession(string prf)
+    {
+        if (Model.Profession == prf) return true;
+        return false;
+    }
+    }
+<h1 class="align-baseline">Form</h1>
+
 <form action="" method="post">
     <input type="text" name="name" value="@Model.name" placeholder="name">
-<span>ok</span>
+    <span class="text-danger">@Html.ValidationMessage("Name")</span>
+<br />
+<br />
 	<input type="int" name="age" value="@Model.age" placeholder="age">
+    <span class="text-danger">@Html.ValidationMessage("age") </span>
+    <br /><br />
 
     <input type="email" name="email" value="@Model.email" placeholder="email">
+    <br /><br />
+
+
+    <select name="Profession">
+        <option selected disabled>---Select---</option>
+        <option selected="@CheckProfession("Student")">Student</option>
+        <option selected="@CheckProfession("Business")">Business</option>
+        <option selected="@CheckProfession("Both")">Both</option>
+    </select>
+
+
+    <br /><br />
 
     <input type="submit" value ="Login "class="btn-dark" />
+    <br /><br />
+
+
+
 
     </form>
